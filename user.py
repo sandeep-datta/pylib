@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-User information and previlege control.
+User information and privilege control.
 """
 
 import os, pwd, grp
 
 def drop_privileges():
     """
-    Drop previleges. Can be used when running under sudo to drop root
+    Drop privileges. Can be used when running under sudo to drop root
     privileges and carryout the remaining actions as the SUDO_USER.
 
     Throws OSError exception (it will be thrown when the process is not allowed
