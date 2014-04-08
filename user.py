@@ -1,10 +1,18 @@
 #!/usr/bin/env python3
+"""
+User information and previlege control.
+"""
 
 import os, pwd, grp
 
-#Throws OSError exception (it will be thrown when the process is not allowed
-#to switch its effective UID or GID):
 def drop_privileges():
+    """
+    Drop previleges. Can be used when running under sudo to drop root
+    privileges and carryout the remaining actions as the SUDO_USER.
+
+    Throws OSError exception (it will be thrown when the process is not allowed
+    to switch its effective UID or GID):
+    """
     if os.getuid() != 0:
         # We're not root so, like, whatever dude
         return
